@@ -1,0 +1,5 @@
+@RestaurantsAPI_HostAddress = https://localhost:7260
+
+POST {{RestaurantsAPI_HostAddress}}/weatherforecast/generate?count=2&min=10&max=20
+
+###
