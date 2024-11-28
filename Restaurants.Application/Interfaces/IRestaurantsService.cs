@@ -1,7 +1,7 @@
 ﻿using Restaurants.Application.Models.DTOs;
 using Restaurants.Domain.Entities;
 
-namespace Restaurants.Application.Services;
+namespace Restaurants.Application.Interfaces;
 
 public interface IRestaurantsService
 {

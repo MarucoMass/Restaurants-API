@@ -21,7 +21,6 @@ var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
 
 await seeder.Seed();
 
-// Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
 
