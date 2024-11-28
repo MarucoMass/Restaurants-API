@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Restaurants.Application.Interfaces;
+using Restaurants.Application.Models.DTOs;
 
 namespace Restaurants.API.Controllers
 {
@@ -17,7 +18,7 @@ namespace Restaurants.API.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<IActionResult> Get([FromRoute] int id)
+        public async Task<IActionResult> GetById([FromRoute] int id)
         {
             var restaurant = await restaurantsService.GetRestaurant(id);
             if (restaurant is null)
@@ -27,5 +28,11 @@ namespace Restaurants.API.Controllers
             return Ok(restaurant);
         }
 
+        [HttpPost]
+        public async Task<IActionResult> CreateRestaurant([FromBody] CreateRestaurantDTO createRestaurantDTO)
+        {
+            int id = await restaurantsService.Create(createRestaurantDTO);
+            return CreatedAtAction(nameof(GetById), new { id }, null);
+        }
     }
 }
