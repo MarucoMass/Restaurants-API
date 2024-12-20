@@ -1,5 +1,47 @@
+
+
 @RestaurantsAPI_HostAddress = https://localhost:7260
 
-POST {{RestaurantsAPI_HostAddress}}/weatherforecast/generate?count=2&min=10&max=20
+
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants
 
 ###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/1
+
+###
+POST {{RestaurantsAPI_HostAddress}}/api/restaurants
+Content-type: application/json
+
+{
+    "Name": "Gourmet Paradiseededassdad",
+    "Description": "A fine dining restaurant specializing in French cuisine.",
+    "Category": "Fine Dining",
+    "HasDelivery": true,
+    "ContactEmail": "contact@gourmetparadise.com",
+    "ContactNumber": "+1 555-123-4567",
+    "City": "Paris",
+    "Street": "Champs-Élysées",
+    "PostalCode": "75-008"
+}
+
+###
+POST {{RestaurantsAPI_HostAddress}}/api/restaurants
+Content-type: application/json
+
+{
+    "Name": "Savoy",
+    "Description": "A fine dining restaurant specializing in French cuisine.",
+    "Category": "American",
+    "HasDelivery": true,
+    "ContactEmail": "123",
+    "ContactNumber": "sdfsdfsd",
+    "City": "Paris",
+    "Street": "Champs-Élysées",
+    "PostalCode": "758"
+}
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/4

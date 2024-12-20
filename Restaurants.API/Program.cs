@@ -1,4 +1,6 @@
 using Restaurants.API.Controllers;
+using Restaurants.Application.Extensions;
+using Restaurants.Domain.Repositories;
 using Restaurants.Infrastructure.Extensions;
 using Restaurants.Infrastructure.Seeders;
 
@@ -8,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
-builder.Services.AddScoped<IWeatherForecastService, WeatherForecastService>();
+builder.Services.AddApplication();
 
 builder.Services.AddInfrastructure(builder.Configuration);
 
@@ -19,7 +21,6 @@ var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
 
 await seeder.Seed();
 
-// Configure the HTTP request pipeline.
 
 app.UseHttpsRedirection();
 
