@@ -23,7 +23,23 @@ Content-type: application/json
     "ContactNumber": "+1 555-123-4567",
     "City": "Paris",
     "Street": "Champs-Élysées",
-    "PostalCode": "75008"
+    "PostalCode": "75-008"
+}
+
+###
+POST {{RestaurantsAPI_HostAddress}}/api/restaurants
+Content-type: application/json
+
+{
+    "Name": "Savoy",
+    "Description": "A fine dining restaurant specializing in French cuisine.",
+    "Category": "American",
+    "HasDelivery": true,
+    "ContactEmail": "123",
+    "ContactNumber": "sdfsdfsd",
+    "City": "Paris",
+    "Street": "Champs-Élysées",
+    "PostalCode": "758"
 }
 
 ###
