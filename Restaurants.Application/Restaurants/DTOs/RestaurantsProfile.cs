@@ -1,9 +1,10 @@
 ﻿
 using AutoMapper;
-using Restaurants.Application.Models.Commands.CreateRestaurant;
+using Restaurants.Application.Restaurants.Commands.CreateRestaurant;
+using Restaurants.Application.Restaurants.DTOs;
 using Restaurants.Domain.Entities;
 
-namespace Restaurants.Application.Models.DTOs;
+namespace Restaurants.Application.Restaurants.DTOs;
 
 public class RestaurantsProfile : Profile
 {

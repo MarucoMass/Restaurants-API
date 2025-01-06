@@ -17,7 +17,7 @@ Content-type: application/json
 {
     "Name": "Gourmet Paradiseededassdad",
     "Description": "A fine dining restaurant specializing in French cuisine.",
-    "Category": "Fine Dining",
+    "Category": "American",
     "HasDelivery": true,
     "ContactEmail": "contact@gourmetparadise.com",
     "ContactNumber": "+1 555-123-4567",
@@ -44,4 +44,8 @@ Content-type: application/json
 
 ###
 
-GET {{RestaurantsAPI_HostAddress}}/api/restaurants/4
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/3
+
+###
+
+DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/3

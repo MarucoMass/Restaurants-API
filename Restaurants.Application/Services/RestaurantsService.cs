@@ -33,7 +33,7 @@ internal class RestaurantsService(IRestaurantsRepository restaurantsRepository, 
     public async Task<RestaurantsDTO?> GetRestaurant(int id)
     {
         logger.LogInformation($"Getting restaurant {id}");
-        var restaurant = await restaurantsRepository.GetAsync(id);
+        var restaurant = await restaurantsRepository.GetByIdAsync(id);
         // FORMA SIN AUTOMAPPER
         //var restaurantDTO = RestaurantsDTO.FromEntity(restaurant);
         //return restaurantDTO;
