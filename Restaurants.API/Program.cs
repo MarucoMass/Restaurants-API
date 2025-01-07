@@ -11,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddApplication();
 
 builder.Services.AddInfrastructure(builder.Configuration);
@@ -25,6 +27,14 @@ var seeder = scope.ServiceProvider.GetRequiredService<IRestaurantSeeder>();
 await seeder.Seed();
 
 app.UseSerilogRequestLogging();
+
+if (app.Environment.IsDevelopment())
+{
+
+    app.UseSwagger();
+
+    app.UseSwaggerUI();
+}
 
 app.UseHttpsRedirection();
 
