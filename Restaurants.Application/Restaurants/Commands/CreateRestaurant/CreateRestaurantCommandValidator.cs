@@ -12,6 +12,8 @@ public class CreateRestaurantCommandValidator : AbstractValidator<CreateRestaura
     {
         RuleFor(dto => dto.Name).Length(3, 100);
 
+        RuleFor(dto => dto.Description).Length(10, 100);
+
         RuleFor(dto => dto.Category)
             .Must(validCategories.Contains)
             //.Custom((value, context) =>
