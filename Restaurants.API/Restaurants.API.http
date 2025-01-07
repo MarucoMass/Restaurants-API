@@ -1,5 +1,6 @@
 
 
+
 @RestaurantsAPI_HostAddress = https://localhost:7260
 
 
@@ -49,3 +50,16 @@ GET {{RestaurantsAPI_HostAddress}}/api/restaurants/3
 ###
 
 DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/3
+
+###
+
+PATCH {{RestaurantsAPI_HostAddress}}/api/restaurants/4
+Content-Type: application/json
+
+{
+   "Name": "Savoy",
+    "Description": "A fine dining restaurant specializing in French cuisine.",
+    "HasDelivery": false
+}
+
+###
