@@ -1,4 +1,3 @@
-@Restaurants.API_HostAddress = https://localhost:7260
 
 @RestaurantsAPI_HostAddress = https://localhost:7260
 
@@ -71,5 +70,13 @@ Content-Type: application/json
   "description": "Nashville Fried Chicken (10 pcs.)",
   "price": 10
 }
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurant/6/dishes
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurant/1/dishes/3
 
 ###
