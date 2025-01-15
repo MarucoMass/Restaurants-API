@@ -62,7 +62,7 @@ Content-Type: application/json
 ###
 
     
-POST {{RestaurantsAPI_HostAddress}}/api/restaurant/1/dishes
+POST {{RestaurantsAPI_HostAddress}}/api/restaurant/2/dishes
 Content-Type: application/json
 
 {
@@ -73,10 +73,15 @@ Content-Type: application/json
 
 ###
 
-GET {{RestaurantsAPI_HostAddress}}/api/restaurant/6/dishes
+GET {{RestaurantsAPI_HostAddress}}/api/restaurant/1/dishes
 
 ###
 
 GET {{RestaurantsAPI_HostAddress}}/api/restaurant/1/dishes/3
 
 ###
+
+DELETE {{RestaurantsAPI_HostAddress}}/api/restaurant/1/dishes
+
+###
+ GET https://localhost:7260/api/restaurant/2/dishes/5
