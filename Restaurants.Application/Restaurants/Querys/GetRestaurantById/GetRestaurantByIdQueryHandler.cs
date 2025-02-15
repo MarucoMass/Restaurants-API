@@ -14,7 +14,7 @@ public class GetRestaurantByIdQueryHandler(ILogger<CreateRestaurantCommand> logg
     IMapper mapper,
     IRestaurantsRepository restaurantsRepository) : IRequestHandler<GetRestaurantByIdQuery, RestaurantsDTO>
 {
-    public async Task<RestaurantsDTO?> Handle(GetRestaurantByIdQuery request, CancellationToken cancellationToken)
+    public async Task<RestaurantsDTO> Handle(GetRestaurantByIdQuery request, CancellationToken cancellationToken)
     {
         logger.LogInformation("Getting restaurant {RestaurantId}", request.Id);
         var restaurant = await restaurantsRepository.GetByIdAsync(request.Id) 

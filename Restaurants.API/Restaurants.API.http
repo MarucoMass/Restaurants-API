@@ -1,5 +1,7 @@
 
 @RestaurantsAPI_HostAddress = https://localhost:7260
+@token = CfDJ8BsCOi7EfI5IgQ9VAz0tW4KNDAd4Y_NatT9Row8H6nPHprHQQRDsbelx9xlzU0EEqKOCAUOeRYlYOLlXDBw6ukqRLGDr2rdew7sceOE-gObvkZ7fTnBnjjsvYDwFyXKcokttGapQmyBscwNzSiRn6oE5iOs2R9jcvxyBr-u-i65d9rkb4pYTGNaVG3StCricT4Hi0SutUeTDpDiHmG2PhOqqsML6izdRMFwa2snjGCLu5_AwMWaO5jrrFwO27aP1Xw8KE0smUjlLDlmMw1X540CentNeOr6tWzfFy8WLvsiz8qYv0LPtcNzoFQD4-ig16EcsTlIZB8nEU4JHG22n6DI6os2jkBvpSpNgKMDekOpCHxV64APRApT079HFI86D8nv_OB_BqG00I2gAGDCqxWdSEZdN42t3C0WUFl5YSVQpBNe58lO3Vv3gD8zZa0pgio6LhKsGy8FBN0sH5C06p07n1lX-ZVYwlOanWi67T9JC74Qr_MImcBDh-AZUFEZF8h5dLJRwBhcvpegTug8oP6pIgXvXoT4twd1k5k7AX_v7UbILleCAqSZ2zoadvMkmxBaWnN47O3JAnfXmgf69BRf7r3nJH34Z3INt-UuLjfVifYWrtjB9nhjk1G5kEYIXciiM0BgPi10Yi-R0tYCRFy7wtFxZQesEdLqw80uw-ggwD1KsokAHAb3veu5dqsN9xGjQhqcTnfoa8ivU7mlUBf-WGNwWDAnWo3uQ2YkO0d3OsRhjKc6wxF9aSgvZzv8O9sxZ87-MpDnc2AEcDd2OR5C44Jvooc6AOlXmthHg23JH
+
 
 
 GET {{RestaurantsAPI_HostAddress}}/api/restaurants
@@ -26,6 +28,7 @@ Content-type: application/json
 
 ###
 POST {{RestaurantsAPI_HostAddress}}/api/restaurants
+Authorization: Bearer {{token}}
 Content-type: application/json
 
 {
@@ -33,11 +36,11 @@ Content-type: application/json
     "Description": "A fine dining restaurant specializing in French cuisine.",
     "Category": "American",
     "HasDelivery": true,
-    "ContactEmail": "123",
+    "ContactEmail": "mail@mail.com",
     "ContactNumber": "sdfsdfsd",
     "City": "Paris",
     "Street": "Champs-Élysées",
-    "PostalCode": "758"
+    "PostalCode": "75-348"
 }
 
 ###
@@ -84,4 +87,24 @@ GET {{RestaurantsAPI_HostAddress}}/api/restaurant/1/dishes/3
 DELETE {{RestaurantsAPI_HostAddress}}/api/restaurant/1/dishes
 
 ###
- GET https://localhost:7260/api/restaurant/2/dishes/5
+GET https://localhost:7260/api/restaurant/2/dishes/5
+
+###
+
+POST {{RestaurantsAPI_HostAddress}}/api/identity/register
+Content-Type: application/json
+
+{
+  "email": "admin@gmail.com",
+  "password": "Example1234!"
+}
+
+###
+
+POST {{RestaurantsAPI_HostAddress}}/api/identity/login
+Content-Type: application/json
+
+{
+  "email": "user@gmail.com",
+  "password": "Example1234!"
+}
