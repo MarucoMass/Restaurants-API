@@ -21,11 +21,11 @@ namespace Restaurants.API.Controllers
     {
 
         [HttpGet]
-        //[AllowAnonymous]
-        [Authorize(Policy = PolicyNames.CreatedAtLeast2Restaurants)]
-        public async Task<ActionResult<IEnumerable<RestaurantsDTO>>> Get()
+        [AllowAnonymous]
+        //[Authorize(Policy = PolicyNames.CreatedAtLeast2Restaurants)]
+        public async Task<ActionResult<IEnumerable<RestaurantsDTO>>> Get([FromQuery] GetAllRestaurantsQuery query)
         {
-            var restaurants = await mediator.Send(new GetAllRestaurantsQuery());
+            var restaurants = await mediator.Send(query);
             return Ok(restaurants);
         }
 
