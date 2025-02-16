@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Restaurants.Application.Interfaces;
 using Restaurants.Application.Restaurants.Commands.CreateRestaurant;
 using Restaurants.Application.Restaurants.Commands.DeleteRestaurant;
 using Restaurants.Application.Restaurants.Commands.UpdateRestaurant;
@@ -10,6 +9,7 @@ using Restaurants.Application.Restaurants.DTOs;
 using Restaurants.Application.Restaurants.Querys.GetAllRestaurants;
 using Restaurants.Application.Restaurants.Querys.GetRestaurantById;
 using Restaurants.Domain.Constants;
+using Restaurants.Infrastructure.Authorization;
 
 
 namespace Restaurants.API.Controllers
@@ -29,6 +29,7 @@ namespace Restaurants.API.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Policy = PolicyNames.HasNationality)]
         public async Task<ActionResult<RestaurantsDTO?>> GetById([FromRoute] int id)
         {
             var restaurant = await mediator.Send(new GetRestaurantByIdQuery(id));
