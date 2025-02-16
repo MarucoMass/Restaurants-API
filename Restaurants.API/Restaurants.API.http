@@ -1,11 +1,12 @@
 @Restaurants.API_HostAddress = https://localhost:7260
 
 @RestaurantsAPI_HostAddress = https://localhost:7260
-@token = CfDJ8BsCOi7EfI5IgQ9VAz0tW4Kg5bHs6EkLhO8a3Ybdxbi_CFdPDDAXluGhLC3VdmVOw2eOL6TY42bXo-r-qjFDbncdVOblva3fRS8qBX_4hM2QDDkgcy-cx4aJGu_1Yv6zZ4_nmGpeFo15PgHlJDAJts6U7r5Gn5Vb0UKdCKuIvMw45PFKI0QXmcOW1295VSJuzMdPQu08tbClUqpFQLmOvSebVTo8VvciwnA62IJRt_F-j9OmHx8cV9VynoZNDuaaRJ8mKQpwWy1PRIRszZJFcOSjzywlu48fLrtPhcntD0lkjkrwCIsHOOizP-jVY8nzlYRniSqG5RkPjGhgTz0xuajLeUrQ44SB0OIHc5H7hxetrD5m8_Doc9HC282ZK7e-1_MZbsjNM8W97MKvOO1hCwlIqNSOXtVujloD0dqzY69KJN7_nrhg0ImoxCMW4VTxcgXoOG_85i_a1RNhQT8p8WBuGMj8xrM3sziJH6LEz-grj5eiVT99jQ3GTX_Q_dIhHeUbf5wVGtGzMDzaSm_4zr1mpu9miGVsJdEzD4Du9jHtxeLPEKkveFkULQLXvvAL3Xsab_xxLjoePq86uLvfr21sFJIY80rgV9dPswALFbHSa-9wm4szJrmCQKveflrJWPQ_XopyFRi_Pm8SfLw_Wxp3EqERVYqyGkWTKqppDT4bo7Mzi31c5dDV1P1US_u3_pi9jvBKDSlhjyUYdA4z0-PpFZ56UA3A3ktn7cjhzYqp586dALXiJq8roo5vXnVZdq81TALwZoZEzc2sf-uhLYdPlQBW3LCeHzY1Vb3jbdLaTTBAr-wKvc0MupyWtUWd7pBTzbSCOIDa9GQZxYPv_aty1Z9qZQGguBRxdVPMkcjC41-JUQssXwkH6sqB0t-UQg
+@token = CfDJ8BsCOi7EfI5IgQ9VAz0tW4KIxAwj4mPkAHQj1rSDdTR3zvvCEx_ZYaDjWn9VDO_Ps4B2embKM45KCBOs6rbzCzeEm8JdFeoVB5Dirl7msXcx3mhrvz1BTB80b-GsKj1jKyjKOuH5qdSeA6KgXIgKKyDbhfCprgrEYMP81IoEaPZUkUh5wudUoVLUPVpsh0tzJXELf8BUzfyi__3XOqgWM_iIa-bCBABiYUCf1nzpfPaEm5fEFKXJXJZjlYe5jtrFY1CDrkCpvlDpJYkVt1eSKVoBYS_c_HSt27m5Q8dFSY76dbxC_TFJX8antjD6WAwFhas6W9DtvzXhdsHlfWTMV0hFajBhq_GFM1geu9YD_1cA3EZWX34bMmZjWowvyMpTMWfikfXiASA-Ox2kHIP4FBH2yaBlrDHYjzTCbsgfJsHCO3UA8Tyjprcz7BCG3F2s5SF2OHRwXqj8gyoSj22EIUtCvtw9VMC2uQcWeq6BLSEpO3joMuy7Rmh4jY6Rb8Du4eruoIDnV0hEqQGc3REzZLpq1OFHj_IsgDuvg6TRjiMUhXJ3qL1wEiXqIEs4uVlNWJi-ASBp2A16AUasU53ovh1z12Cr1OtYgQSjToVmzfx96IjyHz4KATrgnNjrTwqh-lBJof5ZrjxVIdWfrjW9cQA0pF7BJnlTI7hKCFOdW3p0cy6nfM6JgUIFCdT0x4qHNzukVxBQRKtevb2V4BoNSa4Ce_-rWA_oHpbXnazU5567-9xrxY9_5tw4EivfjdN5Atf0C4v4blpZxpGWi6rZJDLyDoXtlfebRNZlI7eO2wKH
 
 
 
 GET {{RestaurantsAPI_HostAddress}}/api/restaurants
+Authorization: Bearer {{token}}
 
 ###
 
@@ -34,7 +35,7 @@ Authorization: Bearer {{token}}
 Content-type: application/json
 
 {
-    "Name": "Savoy",
+    "Name": "Another estaurant for owner 2",
     "Description": "A fine dining restaurant specializing in French cuisine.",
     "Category": "American",
     "HasDelivery": true,
@@ -51,7 +52,8 @@ GET {{RestaurantsAPI_HostAddress}}/api/restaurants/3
 
 ###
 
-DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/3
+DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/9
+Authorization: Bearer {{token}}
 
 ###
 
@@ -97,7 +99,7 @@ POST {{RestaurantsAPI_HostAddress}}/api/identity/register
 Content-Type: application/json
 
 {
-  "email": "admin@gmail.com",
+  "email": "owner2@gmail.com",
   "password": "Example1234!"
 }
 
@@ -107,7 +109,7 @@ POST {{RestaurantsAPI_HostAddress}}/api/identity/login
 Content-Type: application/json
 
 {
-  "email": "user@gmail.com",
+  "email": "owner2@gmail.com",
   "password": "Example1234!"
 }
 
@@ -118,7 +120,7 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "DateOfBirth": "1995-10-23",
+  "DateOfBirth": "1995-09-11",
   "Nationality": "Argentinian"
 }
 
