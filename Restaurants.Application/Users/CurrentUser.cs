@@ -2,7 +2,7 @@
 
 namespace Restaurants.Application.Users;
 
-public record class CurrentUser(
+public record CurrentUser(
             string Id, 
             string Email, 
             IEnumerable<string> Roles, 
