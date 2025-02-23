@@ -1,0 +1,127 @@
+@Restaurants.API_HostAddress = https://localhost:7260
+
+@RestaurantsAPI_HostAddress = https://localhost:7260
+@token = CfDJ8BsCOi7EfI5IgQ9VAz0tW4KIxAwj4mPkAHQj1rSDdTR3zvvCEx_ZYaDjWn9VDO_Ps4B2embKM45KCBOs6rbzCzeEm8JdFeoVB5Dirl7msXcx3mhrvz1BTB80b-GsKj1jKyjKOuH5qdSeA6KgXIgKKyDbhfCprgrEYMP81IoEaPZUkUh5wudUoVLUPVpsh0tzJXELf8BUzfyi__3XOqgWM_iIa-bCBABiYUCf1nzpfPaEm5fEFKXJXJZjlYe5jtrFY1CDrkCpvlDpJYkVt1eSKVoBYS_c_HSt27m5Q8dFSY76dbxC_TFJX8antjD6WAwFhas6W9DtvzXhdsHlfWTMV0hFajBhq_GFM1geu9YD_1cA3EZWX34bMmZjWowvyMpTMWfikfXiASA-Ox2kHIP4FBH2yaBlrDHYjzTCbsgfJsHCO3UA8Tyjprcz7BCG3F2s5SF2OHRwXqj8gyoSj22EIUtCvtw9VMC2uQcWeq6BLSEpO3joMuy7Rmh4jY6Rb8Du4eruoIDnV0hEqQGc3REzZLpq1OFHj_IsgDuvg6TRjiMUhXJ3qL1wEiXqIEs4uVlNWJi-ASBp2A16AUasU53ovh1z12Cr1OtYgQSjToVmzfx96IjyHz4KATrgnNjrTwqh-lBJof5ZrjxVIdWfrjW9cQA0pF7BJnlTI7hKCFOdW3p0cy6nfM6JgUIFCdT0x4qHNzukVxBQRKtevb2V4BoNSa4Ce_-rWA_oHpbXnazU5567-9xrxY9_5tw4EivfjdN5Atf0C4v4blpZxpGWi6rZJDLyDoXtlfebRNZlI7eO2wKH
+
+
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants?searchPhrase=wiza&pageSize=10&pageNumber=1&sortBy=Name&sortDirection=Descending
+# Authorization: Bearer {{token}}
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/1
+Authorization: Bearer {{token}}
+
+###
+POST {{RestaurantsAPI_HostAddress}}/api/restaurants
+Content-type: application/json
+
+{
+    "Name": "Gourmet Paradiseededassdad",
+    "Description": "A fine dining restaurant specializing in French cuisine.",
+    "Category": "American",
+    "HasDelivery": true,
+    "ContactEmail": "contact@gourmetparadise.com",
+    "ContactNumber": "+1 555-123-4567",
+    "City": "Paris",
+    "Street": "Champs-Élysées",
+    "PostalCode": "75-008"
+}
+
+###
+POST {{RestaurantsAPI_HostAddress}}/api/restaurants
+Authorization: Bearer {{token}}
+Content-type: application/json
+
+{
+    "Name": "Another estaurant for owner 2",
+    "Description": "A fine dining restaurant specializing in French cuisine.",
+    "Category": "American",
+    "HasDelivery": true,
+    "ContactEmail": "mail@mail.com",
+    "ContactNumber": "sdfsdfsd",
+    "City": "Paris",
+    "Street": "Champs-Élysées",
+    "PostalCode": "75-348"
+}
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurants/3
+
+###
+
+DELETE {{RestaurantsAPI_HostAddress}}/api/restaurants/9
+Authorization: Bearer {{token}}
+
+###
+
+PATCH {{RestaurantsAPI_HostAddress}}/api/restaurants/4
+Content-Type: application/json
+
+{
+   "Name": "Savoy",
+    "Description": "A fine dining restaurant specializing in French cuisine.",
+    "HasDelivery": false
+}
+
+###
+
+    
+POST {{RestaurantsAPI_HostAddress}}/api/restaurant/2/dishes
+Content-Type: application/json
+
+{
+  "name": "Fried chicken",
+  "description": "Nashville Fried Chicken (10 pcs.)",
+  "price": 10
+}
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurant/1/dishes
+
+###
+
+GET {{RestaurantsAPI_HostAddress}}/api/restaurant/1/dishes/3
+
+###
+
+DELETE {{RestaurantsAPI_HostAddress}}/api/restaurant/1/dishes
+
+###
+GET https://localhost:7260/api/restaurant/2/dishes/5
+
+###
+
+POST {{RestaurantsAPI_HostAddress}}/api/identity/register
+Content-Type: application/json
+
+{
+  "email": "owner2@gmail.com",
+  "password": "Example1234!"
+}
+
+###
+
+POST {{RestaurantsAPI_HostAddress}}/api/identity/login
+Content-Type: application/json
+
+{
+  "email": "owner2@gmail.com",
+  "password": "Example1234!"
+}
+
+###
+
+PATCH {{RestaurantsAPI_HostAddress}}/api/identity/user
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "DateOfBirth": "1995-09-11",
+  "Nationality": "Argentinian"
+}
+
+###
